@@ -10,5 +10,9 @@ import com.pluralsight.blog.model.Post;
 public interface PostRepository extends JpaRepository<Post, Long>{
 
 	@RestResource(rel="contains-title", path="containsTitle")
-	public List<Post> findByTitleContaining(String title);
+	List<Post> findByTitleContaining(String title);
+
+
+	List<Post> findByAuthor_Lastname(String lastname);
+
 }
